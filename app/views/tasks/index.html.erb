@@ -1,0 +1,9 @@
+<h1>Mes tâches en cours :</h1>
+
+<ul style="list-style: none">
+<% @tasks.each do |task| %>
+  <li><%= link_to task.title, task_path(task) %>&nbsp;&nbsp;<button><%= link_to "Modifier", edit_task_path(task), style: :"text-decoration: none" %></button>&nbsp;&nbsp;<button><%= link_to "Supprimer", task_path(task), style: :"text-decoration: none", method: :delete %></button></li>
+<% end %>
+</ul>
+<br>
+<%= link_to "Ajouter une nouvelle tache", new_task_path %>
